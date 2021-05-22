@@ -1,14 +1,11 @@
+package book;
+
 import book.dao.BookDao;
 import book.exception.DuplicateBookException;
-import book.exception.NoSuchBookException;
 import book.model.Book;
-import groovy.lang.IntRange;
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.http.ContentType;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.*;
 
 import javax.inject.Inject;
 import java.util.stream.IntStream;
@@ -39,6 +36,7 @@ public class BookInquiryTest {
     }
 
     @Test
+    @Order(1)
     public void performBookInquiry() {
         given().contentType(ContentType.JSON).when().get("/books").then().statusCode(200);
     }
