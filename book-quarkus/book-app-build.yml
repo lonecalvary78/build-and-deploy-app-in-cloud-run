@@ -1,0 +1,12 @@
+steps:
+   - name: 'gcr.io/cloud-builders/docker'
+     args: ['build','--rm','-t','gcr.io/{project-name}/book-quarkus']
+     timeout: 600s
+   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+     entrypoint: gcloud
+     args: ['run','deploy','--image','gcr.io/{YOUR-PROJECT-NAME}/book-quarkus','--platform','managed','--allow-unauthenticated']
+     env:
+       - 'CLOUDSDK_COMPUTE_REGION={YOUR_COMPUTE_REGION}'
+
+images:
+  - gcr.io/{YOUR-PROJECT-NAME}/book-quarkus

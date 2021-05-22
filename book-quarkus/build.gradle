@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'io.quarkus' version '1.13.3.Final'
+}
+
+group 'book'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation(enforcedPlatform('io.quarkus:quarkus-bom:1.13.3.Final'))
+    implementation('io.quarkus:quarkus-resteasy')
+    implementation('io.quarkus:quarkus-resteasy-jsonb')
+    implementation('io.quarkus:quarkus-config-yaml')
+    implementation('io.quarkus:quarkus-hibernate-orm')
+    implementation('io.quarkus:quarkus-hibernate-validator')
+    implementation('io.quarkus:quarkus-agroal')
+    implementation('io.quarkus:quarkus-jdbc-h2')
+    testImplementation('io.quarkus:quarkus-junit5')
+    testImplementation('io.rest-assured:rest-assured')
+}
+
+test {
+    useJUnitPlatform()
+}
+
+wrapper {
+    gradleVersion = "7.0.2"
+}

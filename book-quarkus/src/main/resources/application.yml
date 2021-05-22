@@ -1,0 +1,28 @@
+quarkus:
+  application:
+    name: Book
+  http:
+    port: 8080
+  datasource:
+    db-kind: H2
+    jdbc:
+      url: jdbc:h2:mem:books
+      username: books
+      password: books
+  hibernate-orm:
+    metrics:
+      enabled: true
+    dialect: org.hibernate.dialect.H2Dialect
+
+    database:
+      charset: UTF-8
+      generation: update
+  package:
+    type: fast-jar
+
+  log:
+    level:
+      book: INFO
+
+  pagination:
+    maximum-record-per-page: 10
