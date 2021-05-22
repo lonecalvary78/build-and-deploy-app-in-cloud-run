@@ -3,6 +3,8 @@ quarkus:
     name: Book
   http:
     port: 8080
+  banner:
+    enabled: false
   datasource:
     db-kind: H2
     jdbc:
@@ -10,8 +12,6 @@ quarkus:
       username: books
       password: books
   hibernate-orm:
-    metrics:
-      enabled: true
     dialect: org.hibernate.dialect.H2Dialect
 
     database:
