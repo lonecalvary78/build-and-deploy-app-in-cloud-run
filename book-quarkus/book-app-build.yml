@@ -5,7 +5,7 @@ steps:
      args: ['push','gcr.io/$PROJECT_ID/book-quarkus']
    - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
      entrypoint: gcloud
-     args: ['run','deploy','book-app','--image','gcr.io/$PROJECT_ID/book-quarkus','--platform','managed','--region','asia-southeast2','--allow-unauthenticated']
+     args: ['run','deploy','book-app','--image','gcr.io/$PROJECT_ID/book-quarkus','--platform','managed','--region','YOUR_COMPUTE_REGION','--allow-unauthenticated']
 
 images:
   - gcr.io/$PROJECT_ID/book-quarkus

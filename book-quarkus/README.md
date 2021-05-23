@@ -15,8 +15,6 @@ That command will submit the new build request to Cloud Build for performing:
  There is something need to be updated before you proceed to build appliaction.
  
  ####book-app-build.yml
- 
- - Replace {YOUR-PROJECT-NAME} with the project on your GCP
  - Replace {YOUR_COMPUTE_REGION} with the GCP region.
      
 
