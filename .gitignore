@@ -2,4 +2,6 @@
 /book-quarkus/.idea/
 /book-quarkus/bin/
 /book-quarkus/build/
-
+/book-springboot/.gradle/
+/book-springboot/.idea/
+/book-springboot/build/

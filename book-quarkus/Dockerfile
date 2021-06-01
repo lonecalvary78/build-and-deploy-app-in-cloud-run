@@ -7,6 +7,7 @@ RUN gradle build
 
 FROM openjdk:11.0.11
 LABEL maintainer="{Put name here}"
+ENV USER_MEM_ARGS=""
 COPY --from=builder /app/build/quarkus-app/ /book/
-ENTRYPOINT ["java","-jar","/book/quarkus-run.jar"]
+ENTRYPOINT ["/bin/bash","-c","java $USER_MEM_ARGS -jar /book/quarkus-run.jar"]
 

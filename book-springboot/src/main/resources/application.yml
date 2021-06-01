@@ -1,0 +1,24 @@
+server:
+  port: 8080
+
+spring:
+  main:
+    banner-mode: off
+  datasource:
+    url: jdbc:h2:mem:books
+    username: books
+    password: books
+    type: com.zaxxer.hikari.HikariDataSource
+  jpa:
+    hibernate:
+      ddl2auto: none
+      properties:
+        dialect: org.hibernate.dialect.H2Dialect
+
+logging:
+  level:
+    book: INFO
+
+pagination:
+  maximum-record-per-page: 10
+

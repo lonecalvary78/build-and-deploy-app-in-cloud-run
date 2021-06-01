@@ -1,0 +1,13 @@
+steps:
+   - name: 'gcr.io/cloud-builders/docker'
+     args: ['build','-t','gcr.io/$PROJECT_ID/book-springboot','.']
+   - name: 'gcr.io/cloud-builders/docker'
+     args: ['push','gcr.io/$PROJECT_ID/book-springboot']
+   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+     entrypoint: gcloud
+     args: ['run','deploy','book-app','--image','gcr.io/$PROJECT_ID/book-springboot','--platform','managed','--region','{YOUR_COMPUTE_REGION}','--allow-unauthenticated']
+     env:
+      - USER_MEM_ARGS="-Xms256m -Xmx512m"
+
+images:
+  - gcr.io/$PROJECT_ID/book-springboot
